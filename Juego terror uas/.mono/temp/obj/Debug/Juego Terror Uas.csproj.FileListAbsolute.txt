@@ -1,0 +1,9 @@
+M:\Proyectos Juegos\Juego terror uas\.mono\temp\bin\Debug\Juego Terror Uas.dll
+M:\Proyectos Juegos\Juego terror uas\.mono\temp\bin\Debug\Juego Terror Uas.pdb
+M:\Proyectos Juegos\Juego terror uas\.mono\temp\obj\Debug\Juego Terror Uas.csproj.AssemblyReference.cache
+M:\Proyectos Juegos\Juego terror uas\.mono\temp\obj\Debug\Juego Terror Uas.GeneratedMSBuildEditorConfig.editorconfig
+M:\Proyectos Juegos\Juego terror uas\.mono\temp\obj\Debug\Juego Terror Uas.AssemblyInfoInputs.cache
+M:\Proyectos Juegos\Juego terror uas\.mono\temp\obj\Debug\Juego Terror Uas.AssemblyInfo.cs
+M:\Proyectos Juegos\Juego terror uas\.mono\temp\obj\Debug\Juego Terror Uas.csproj.CoreCompileInputs.cache
+M:\Proyectos Juegos\Juego terror uas\.mono\temp\obj\Debug\Juego Terror Uas.dll
+M:\Proyectos Juegos\Juego terror uas\.mono\temp\obj\Debug\Juego Terror Uas.pdb

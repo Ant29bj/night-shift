@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "NCvwAfmlfLXsbeXDQbJjbnVhjs+XvfyKTARuHiib+ILok0iAUy9TE/BYf/Uh3Pn84ppuH93NJ953GDKPYwHtoA==",
+  "success": true,
+  "projectFilePath": "M:\\Proyectos Juegos\\Juego terror uas\\Juego Terror Uas.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\itach\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.2\\microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+    "C:\\Users\\itach\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.2\\microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
