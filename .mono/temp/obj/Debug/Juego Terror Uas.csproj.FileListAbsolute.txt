@@ -7,3 +7,12 @@ C:\Users\SaulOmen\Documents\Juegos\night-shift\.mono\temp\bin\Debug\Juego Terror
 C:\Users\SaulOmen\Documents\Juegos\night-shift\.mono\temp\bin\Debug\Juego Terror Uas.pdb
 C:\Users\SaulOmen\Documents\Juegos\night-shift\.mono\temp\obj\Debug\Juego Terror Uas.dll
 C:\Users\SaulOmen\Documents\Juegos\night-shift\.mono\temp\obj\Debug\Juego Terror Uas.pdb
+M:\Proyectos Juegos\night-shift\.mono\temp\bin\Debug\Juego Terror Uas.dll
+M:\Proyectos Juegos\night-shift\.mono\temp\bin\Debug\Juego Terror Uas.pdb
+M:\Proyectos Juegos\night-shift\.mono\temp\obj\Debug\Juego Terror Uas.csproj.AssemblyReference.cache
+M:\Proyectos Juegos\night-shift\.mono\temp\obj\Debug\Juego Terror Uas.GeneratedMSBuildEditorConfig.editorconfig
+M:\Proyectos Juegos\night-shift\.mono\temp\obj\Debug\Juego Terror Uas.AssemblyInfoInputs.cache
+M:\Proyectos Juegos\night-shift\.mono\temp\obj\Debug\Juego Terror Uas.AssemblyInfo.cs
+M:\Proyectos Juegos\night-shift\.mono\temp\obj\Debug\Juego Terror Uas.csproj.CoreCompileInputs.cache
+M:\Proyectos Juegos\night-shift\.mono\temp\obj\Debug\Juego Terror Uas.dll
+M:\Proyectos Juegos\night-shift\.mono\temp\obj\Debug\Juego Terror Uas.pdb

@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Modules/CharacterController/CharacterController.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Modules/Windows/Ventana.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Environment" id=1]
+background_mode = 1
+background_color = Color( 0, 0, 0, 0.686275 )
+background_energy = 0.14
+fog_enabled = true
+ss_reflections_enabled = true
+ssao_enabled = true
 
 [node name="TestLevel" type="Spatial"]
 
@@ -23,6 +32,13 @@ width = 61.0
 height = 5.4
 depth = 52.0
 
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.26543, 0 )
+use_collision = true
+width = 64.4
+height = 4.6
+depth = 55.6
+
 [node name="Stairs" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0 )
 
@@ -41,7 +57,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.99392, 1.29964, -0.0030036 
 use_collision = true
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( -0.462688, -0.69065, 0.555808, -0.572265, 0.711516, 0.407747, -0.677077, -0.12941, -0.724444, 0, 11.5, 0 )
+transform = Transform( -0.462688, -0.69065, 0.555808, -0.572265, 0.711516, 0.407747, -0.677077, -0.12941, -0.724445, 0, 9.04963, 0 )
+visible = false
 shadow_enabled = true
 directional_shadow_blend_splits = true
 directional_shadow_normal_bias = 0.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 1.69895, 6.6462, -13.8999 )
+spot_range = 7.47629
+spot_angle = 63.389
+
+[node name="Ventana" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8387, 4.05616, -8.31596 )

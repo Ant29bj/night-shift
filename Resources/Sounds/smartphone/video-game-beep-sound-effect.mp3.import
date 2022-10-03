@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/video-game-beep-sound-effect.mp3-97024f8b105592976b0ceff034d15c83.mp3str"
+
+[deps]
+
+source_file="res://Resources/Sounds/smartphone/video-game-beep-sound-effect.mp3"
+dest_files=[ "res://.import/video-game-beep-sound-effect.mp3-97024f8b105592976b0ceff034d15c83.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

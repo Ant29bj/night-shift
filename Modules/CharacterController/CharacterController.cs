@@ -1,7 +1,6 @@
 using Godot;
 using System;
 using transform;
-
 public class CharacterController : KinematicBody
 {
 	//Variables Exportadas
@@ -23,6 +22,10 @@ public class CharacterController : KinematicBody
 	//Miembros de escena principal
 	private Camera camera = null;
 	private Spatial cameraY = null;
+	public Spatial spotlight = null;
+	public AudioStreamPlayer3D walk = null;
+	public AudioStreamPlayer3D phone = null;
+
 
 
 
@@ -32,6 +35,10 @@ public class CharacterController : KinematicBody
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 		camera = GetNode<Camera>("CameraRig/Yrotation/Camera");
 		cameraY = GetNode<Spatial>("CameraRig/Yrotation");
+		spotlight = GetNode<Spatial>("CameraRig/Yrotation/Camera/Celular/Cel/SpotLight");
+		walk = GetNode<AudioStreamPlayer3D>("AudioStreamPlayer3D");
+		phone = GetNode<AudioStreamPlayer3D>("CameraRig/Yrotation/Camera/Celular/Cel/AudioStreamPlayer3D");
+
 
 		jumpHeight = jumpHeight / 2.0f;
 		gravity = (-2.0f * jumpHeight * Mathf.Pow(SprintSpeed, 2.0f)) / Mathf.Pow(jumpMaxDistance, 2.0f);
@@ -44,6 +51,7 @@ public class CharacterController : KinematicBody
 
 		//Obtiene el input principal
 		var input = Input.GetVector("walk_left", "walk_right", "walk_up", "walk_down");
+
 
 		//Inicializacion de variables de ayuda
 		var target_velocity = new Vector3();
@@ -88,6 +96,47 @@ public class CharacterController : KinematicBody
 		{
 			velocity.y = 0.0f;
 		}
+		if (Input.IsActionJustPressed("flashlight") && spotlight.Visible)
+		{
+
+			spotlight.Visible = false;
+			if (!phone.Playing)
+			{
+				phone.Play();
+
+			}
+
+
+		}
+		else if (Input.IsActionJustPressed("flashlight") && !spotlight.Visible)
+		{
+			spotlight.Visible = true;
+			// phone.Seek(1);
+
+			// phone.Play();
+			if (phone.Playing == true)
+			{
+				phone.Stop();
+
+			}
+
+
+		}
+
+
+		if (velocity.Length() > 0)
+		{
+			walk.Play();
+		}
+		else if (velocity.Length() < 0)
+		{
+			walk.Stop();
+			GD.Print("Hola");
+
+		}
+
+
+
 
 
 	}
@@ -121,5 +170,6 @@ public class CharacterController : KinematicBody
 
 		//usa funciones ya echas para mover al personaje y darle la velocidad restante a la variable
 		velocity = MoveAndSlide(velocity, Vector3.Up, true, 4, Mathf.Deg2Rad(45.0f));
+		GD.Print(velocity);
 	}
 }
