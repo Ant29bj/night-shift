@@ -30,41 +30,41 @@ uv1_scale = Vector3( 8, 8, 8 )
 [node name="Salon" type="Spatial"]
 
 [node name="Izquierda" type="CSGBox" parent="."]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.193, 2.713, 74.088 )
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.188264, 2.7727, -8.42057 )
 use_collision = true
 width = 169.266
 height = 45.0665
 material = SubResource( 1 )
 
 [node name="Derecha" type="CSGBox" parent="."]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.112, 2.726, 90.698 )
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.107264, 2.7857, 8.18943 )
 use_collision = true
 width = 170.532
 height = 45.0665
 material = SubResource( 1 )
 
 [node name="Trasera" type="CSGBox" parent="."]
-transform = Transform( -4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, -8.373, 2.713, 82.354 )
+transform = Transform( -4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, -8.37774, 2.7727, -0.154573 )
 use_collision = true
 width = 167.321
 height = 45.0665
 material = SubResource( 1 )
 
 [node name="Frontal2" type="CSGBox" parent="."]
-transform = Transform( -4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, 8.73435, 2.713, 82.2883 )
+transform = Transform( -4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, 8.72961, 2.7727, -0.22027 )
 use_collision = true
 width = 166.102
 height = 45.0665
 material = SubResource( 5 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, -0.0133135, 0.330935, 82.3351 )
+transform = Transform( 0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, -0.0180494, 0.390634, -0.173471 )
 visible = false
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
 [node name="CSGBox5" type="CSGBox" parent="."]
-transform = Transform( 0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, 0.185532, 0.455134, 82.3969 )
+transform = Transform( 0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, 0.180796, 0.514833, -0.111673 )
 use_collision = true
 width = 169.207
 height = 164.24
@@ -72,7 +72,7 @@ depth = 0.001
 material = SubResource( 4 )
 
 [node name="CSGBox6" type="CSGBox" parent="."]
-transform = Transform( 0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, 0.185532, 4.97593, 82.3969 )
+transform = Transform( 0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, 0.180796, 5.03563, -0.111673 )
 use_collision = true
 width = 169.207
 height = 164.24
@@ -80,7 +80,7 @@ depth = 0.001
 material = SubResource( 4 )
 
 [node name="CharacterController" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51427, 84.9811 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00473595, 2.57397, 2.47253 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 6 )
