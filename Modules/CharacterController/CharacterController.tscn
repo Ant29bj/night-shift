@@ -1,13 +1,31 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Modules/CharacterController/CharacterController.cs" type="Script" id=1]
 [ext_resource path="res://Modules/Flashlight/Flashlight.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Modules/smartphone/Celular.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Resources/Sounds/Walk/walk-sound-effect.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Resources/Sounds/smartphone/video-game-beep-sound-effect.mp3" type="AudioStream" id=4]
 
 [sub_resource type="CapsuleMesh" id=1]
 
 [sub_resource type="CapsuleShape" id=2]
+
+[sub_resource type="Animation" id=3]
+resource_name = "flash"
+length = 0.325
+tracks/0/type = "audio"
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0 )
+}
 
 [node name="CharacterController" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -40,7 +58,13 @@ visible = false
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.32558, -0.701535, -1.04011 )
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+visible = false
 stream = ExtResource( 4 )
 unit_db = 10.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+playback_speed = 0.33
+anims/flash = SubResource( 3 )
 
 [editable path="CameraRig/Yrotation/Camera/Celular"]

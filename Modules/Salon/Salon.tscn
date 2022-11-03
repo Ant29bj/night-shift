@@ -1,9 +1,12 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Resources/Wall/Plaster001_1K_Roughness.jpg" type="Texture" id=1]
-[ext_resource path="res://Resources/Floor/Tiles010_1K_Roughness.jpg" type="Texture" id=2]
 [ext_resource path="res://Resources/Floor/Tiles010_1K_AmbientOcclusion.jpg" type="Texture" id=3]
-[ext_resource path="res://Modules/CharacterController/CharacterController.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Tiles002_1K_Color.jpg" type="Texture" id=4]
+[ext_resource path="res://Assets/Porcelain002_1K_Color.jpg" type="Texture" id=5]
+[ext_resource path="res://Modules/tables/mesa.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Modules/CharacterController/CharacterController.tscn" type="PackedScene" id=7]
+[ext_resource path="res://addons/folder_node/folder.gd" type="Script" id=8]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 1 )
@@ -12,75 +15,162 @@ albedo_texture = ExtResource( 1 )
 albedo_texture = ExtResource( 3 )
 uv1_scale = Vector3( 4, 4, 4 )
 
-[sub_resource type="QuadMesh" id=2]
-
-[sub_resource type="SpatialMaterial" id=3]
-albedo_texture = ExtResource( 2 )
-normal_enabled = true
-normal_scale = -2.0
-uv1_scale = Vector3( 8, 8, 1 )
-uv1_triplanar_sharpness = 0.554785
-
 [sub_resource type="SpatialMaterial" id=4]
 albedo_texture = ExtResource( 3 )
 uv1_scale = Vector3( 8, 8, 8 )
 
-[sub_resource type="Environment" id=6]
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 4 )
+uv1_scale = Vector3( 4, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_texture = ExtResource( 5 )
 
 [node name="Salon" type="Spatial"]
 
-[node name="Izquierda" type="CSGBox" parent="."]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.188264, 2.7727, -8.42057 )
+[node name="CharacterController" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.37657, 3.23418, -0.661443 )
+
+[node name="MesasFila1" type="Node" parent="."]
+script = ExtResource( 8 )
+
+[node name="Mesa" parent="MesasFila1" instance=ExtResource( 6 )]
+transform = Transform( -2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, 0.254039, 1.54077, -7.35829 )
+
+[node name="Mesa2" parent="MesasFila1" instance=ExtResource( 6 )]
+transform = Transform( -2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, -2.7102, 1.541, -7.36 )
+
+[node name="Mesa3" parent="MesasFila1" instance=ExtResource( 6 )]
+transform = Transform( -2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, -5.33278, 1.541, -7.36 )
+
+[node name="Mesa4" parent="MesasFila1" instance=ExtResource( 6 )]
+transform = Transform( -2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, -7.82171, 1.541, -7.36 )
+
+[node name="MesasFila2" type="Node" parent="."]
+script = ExtResource( 8 )
+
+[node name="Mesa" parent="MesasFila2" instance=ExtResource( 6 )]
+transform = Transform( -2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, 0.254039, 1.54077, -2.01324 )
+
+[node name="Mesa2" parent="MesasFila2" instance=ExtResource( 6 )]
+transform = Transform( -2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, -2.71, 1.541, -2.013 )
+
+[node name="Mesa3" parent="MesasFila2" instance=ExtResource( 6 )]
+transform = Transform( -2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, -5.333, 1.541, -2.013 )
+
+[node name="Mesa4" parent="MesasFila2" instance=ExtResource( 6 )]
+transform = Transform( -2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, -7.822, 1.541, -2.013 )
+
+[node name="MesasFila3" type="Node" parent="."]
+script = ExtResource( 8 )
+
+[node name="Mesa" parent="MesasFila3" instance=ExtResource( 6 )]
+transform = Transform( -2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, 0.254, 1.541, 2.013 )
+
+[node name="Mesa2" parent="MesasFila3" instance=ExtResource( 6 )]
+transform = Transform( -2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, -2.71, 1.541, 2.013 )
+
+[node name="Mesa3" parent="MesasFila3" instance=ExtResource( 6 )]
+transform = Transform( -2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, -5.333, 1.541, 2.013 )
+
+[node name="Mesa4" parent="MesasFila3" instance=ExtResource( 6 )]
+transform = Transform( -2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, -7.822, 1.541, 2.013 )
+
+[node name="MesasFila4" type="Node" parent="."]
+script = ExtResource( 8 )
+
+[node name="Mesa" parent="MesasFila4" instance=ExtResource( 6 )]
+transform = Transform( -2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, 0.254, 1.541, 7.358 )
+
+[node name="Mesa2" parent="MesasFila4" instance=ExtResource( 6 )]
+transform = Transform( -2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, -2.71, 1.541, 7.358 )
+
+[node name="Mesa3" parent="MesasFila4" instance=ExtResource( 6 )]
+transform = Transform( -2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, -5.333, 1.541, 7.358 )
+
+[node name="Mesa4" parent="MesasFila4" instance=ExtResource( 6 )]
+transform = Transform( -2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, -7.822, 1.541, 7.358 )
+
+[node name="Salon" type="Node" parent="."]
+script = ExtResource( 8 )
+
+[node name="Izquierda" type="CSGBox" parent="Salon"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.188264, 3.76866, -10.7226 )
+calculate_tangents = false
 use_collision = true
-width = 169.266
-height = 45.0665
+width = 210.599
+height = 65.0811
 material = SubResource( 1 )
 
-[node name="Derecha" type="CSGBox" parent="."]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.107264, 2.7857, 8.18943 )
+[node name="Derecha" type="CSGBox" parent="Salon"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.182876, 3.75654, 10.4497 )
+calculate_tangents = false
 use_collision = true
-width = 170.532
-height = 45.0665
+width = 210.599
+height = 65.081
 material = SubResource( 1 )
 
-[node name="Trasera" type="CSGBox" parent="."]
-transform = Transform( -4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, -8.37774, 2.7727, -0.154573 )
+[node name="Trasera" type="CSGBox" parent="Salon"]
+transform = Transform( -4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, -10.2225, 3.7833, -0.128863 )
+calculate_tangents = false
 use_collision = true
-width = 167.321
-height = 45.0665
+width = 210.599
+height = 65.081
 material = SubResource( 1 )
 
-[node name="Frontal2" type="CSGBox" parent="."]
-transform = Transform( -4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, 8.72961, 2.7727, -0.22027 )
+[node name="Frontal2" type="CSGBox" parent="Salon"]
+transform = Transform( -4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, 10.6193, 3.762, -0.129 )
+calculate_tangents = false
 use_collision = true
-width = 166.102
-height = 45.0665
+width = 210.58
+height = 65.081
 material = SubResource( 5 )
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, -0.0180494, 0.390634, -0.173471 )
-visible = false
-mesh = SubResource( 2 )
-material/0 = SubResource( 3 )
-
-[node name="CSGBox5" type="CSGBox" parent="."]
-transform = Transform( 0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, 0.180796, 0.514833, -0.111673 )
+[node name="piso" type="CSGBox" parent="Salon"]
+transform = Transform( 0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, 0.180796, 0.5355, -0.111673 )
+calculate_tangents = false
 use_collision = true
-width = 169.207
-height = 164.24
+width = 210.599
+height = 210.58
 depth = 0.001
 material = SubResource( 4 )
 
-[node name="CSGBox6" type="CSGBox" parent="."]
-transform = Transform( 0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, 0.180796, 5.03563, -0.111673 )
+[node name="techo" type="CSGBox" parent="Salon"]
+transform = Transform( 0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, 0.180796, 7.01496, -0.111673 )
+calculate_tangents = false
 use_collision = true
-width = 169.207
-height = 164.24
+width = 210.599
+height = 210.58
 depth = 0.001
 material = SubResource( 4 )
 
-[node name="CharacterController" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00473595, 2.57397, 2.47253 )
+[node name="Desnivel" type="CSGBox" parent="Salon"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.19532, 1.15069, 2.69417 )
+calculate_tangents = false
+use_collision = true
+width = 4.62795
+height = 1.15515
+depth = 15.2618
+material = SubResource( 6 )
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 6 )
+[node name="Division" type="CSGBox" parent="Salon"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36928, 6.30769, -0.209352 )
+calculate_tangents = false
+width = 0.217581
+height = 1.41086
+depth = 20.6242
+material = SubResource( 7 )
+
+[node name="CSGBox" type="CSGBox" parent="Salon/Division"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5198, -9.98033 )
+calculate_tangents = false
+width = 0.61174
+height = 6.44809
+depth = 0.838675
+
+[node name="CSGBox2" type="CSGBox" parent="Salon/Division"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5198, 10.1319 )
+calculate_tangents = false
+width = 0.612
+height = 6.44809
+depth = 0.839

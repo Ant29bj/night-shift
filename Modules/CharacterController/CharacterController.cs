@@ -26,6 +26,8 @@ public class CharacterController : KinematicBody
 	public AudioStreamPlayer3D walk = null;
 	public AudioStreamPlayer3D phone = null;
 
+	public AnimationPlayer aFlash = null;
+
 
 
 
@@ -38,6 +40,7 @@ public class CharacterController : KinematicBody
 		spotlight = GetNode<Spatial>("CameraRig/Yrotation/Camera/Celular/Cel/SpotLight");
 		walk = GetNode<AudioStreamPlayer3D>("AudioStreamPlayer3D");
 		phone = GetNode<AudioStreamPlayer3D>("CameraRig/Yrotation/Camera/Celular/Cel/AudioStreamPlayer3D");
+		aFlash = GetNode<AnimationPlayer>("AnimationPlayer");
 
 
 		jumpHeight = jumpHeight / 2.0f;
@@ -98,27 +101,20 @@ public class CharacterController : KinematicBody
 		}
 		if (Input.IsActionJustPressed("flashlight") && spotlight.Visible)
 		{
-
 			spotlight.Visible = false;
-			phone.Seek(2);
+			aFlash.Play("flash");
 
-			phone.Play();
 		}
 		else if (Input.IsActionJustPressed("flashlight") && !spotlight.Visible)
 		{
 			spotlight.Visible = true;
-			phone.Seek(2);
-
-			phone.Play();
+			aFlash.Play("flash");
 
 		}
-
-		// if(Input.Act)
-		// if (Input.IsActionJustReleased("flashlight"))
-		// {
-		// 	phone.Stop();
-
-		// }
+		if (Input.IsActionJustReleased("flashlight"))
+		{
+			aFlash.Stop();
+		}
 
 	}
 	public override void _Input(InputEvent e)
@@ -145,6 +141,18 @@ public class CharacterController : KinematicBody
 				Input.MouseMode = (Input.MouseMode == Input.MouseModeEnum.Captured ? Input.MouseModeEnum.Visible : Input.MouseModeEnum.Captured);
 			}
 		}
+	}
+
+
+	public string some_method()
+	{
+		string prueba = "AdiosMundo";
+		return prueba;
+	}
+	public string another_method()
+	{
+		string prueba = "HolaMundo";
+		return prueba;
 	}
 	public override void _PhysicsProcess(float delta)
 	{//invocado una vez cada frame de fisicas, por predeterminado es 60fps se puede cambiar en las opciones del proyecto
