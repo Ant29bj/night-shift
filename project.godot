@@ -56,7 +56,7 @@ config/icon="res://icon.png"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/WAT/plugin.cfg", "res://addons/folder_node/plugin.cfg", "res://addons/gut/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/folder_node/plugin.cfg", "res://addons/gut/plugin.cfg" )
 
 [gui]
 

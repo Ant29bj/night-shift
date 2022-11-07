@@ -29,8 +29,6 @@ tracks/0/keys = {
 
 [node name="CharacterController" type="KinematicBody"]
 script = ExtResource( 1 )
-speed = 5.0
-SprintSpeed = 10.0
 acceleration = 5.0
 jumpHeight = 4.0
 jumpMaxDistance = 4.0

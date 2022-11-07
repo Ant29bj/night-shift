@@ -4,8 +4,8 @@ using transform;
 public class CharacterController : KinematicBody
 {
 	//Variables Exportadas
-	[Export(PropertyHint.Range, "0.1,10.0,0.1")] public float speed = 2.0f;
-	[Export(PropertyHint.Range, "0.1,10.0,0.1")] public float SprintSpeed = 4.0f;
+	[Export(PropertyHint.Range, "0.1,10.0,0.1")] public float speed = 5.0f;
+	[Export(PropertyHint.Range, "0.1,10.0,0.1")] public float SprintSpeed = 10.0f;
 
 	[Export] public float acceleration = 1.0f / 0.5f;
 	[Export] public float stoppingAcceleration = 10.0f;
@@ -18,6 +18,9 @@ public class CharacterController : KinematicBody
 	private Vector3 velocity = Vector3.Zero;
 	private float gravity;
 	private float jumpInitialVelocity;
+
+	private int Hp = 100;
+	private int Stamina = 100;
 
 	//Miembros de escena principal
 	private Camera camera = null;
@@ -33,6 +36,7 @@ public class CharacterController : KinematicBody
 
 	public override void _Ready()
 	{
+
 		//Invocado cuando el nodo es agregado y los hijos estan inicializados
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 		camera = GetNode<Camera>("CameraRig/Yrotation/Camera");
@@ -50,6 +54,7 @@ public class CharacterController : KinematicBody
 
 	public override void _Process(float delta)
 	{
+
 		//Invocado cada frame, obtiene el input y maneja la velocidad
 
 		//Obtiene el input principal
@@ -144,16 +149,25 @@ public class CharacterController : KinematicBody
 	}
 
 
-	public string some_method()
+	public bool jumpTest()
 	{
-		string prueba = "AdiosMundo";
+		bool prueba;
+		Input.ActionPress("jump");
+		prueba = Input.IsActionPressed("jump");
 		return prueba;
 	}
-	public string another_method()
+	public int takeDamage(int MonsterHit)
 	{
-		string prueba = "HolaMundo";
-		return prueba;
+
+		Hp = Hp - MonsterHit;
+		if (Hp < 0)
+		{
+			Hp = 0;
+		}
+		return Hp;
 	}
+
+
 	public override void _PhysicsProcess(float delta)
 	{//invocado una vez cada frame de fisicas, por predeterminado es 60fps se puede cambiar en las opciones del proyecto
 
