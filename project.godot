@@ -113,6 +113,10 @@ flashlight={
  ]
 }
 
+[mono]
+
+project/assembly_name="Juego Terror Uas"
+
 [physics]
 
 common/enable_pause_aware_picking=true

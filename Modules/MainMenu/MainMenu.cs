@@ -66,6 +66,16 @@ public class MainMenu : Node
 			OS.WindowSize = new Vector2(1600, 900);
 
 		}
+		else if (prueba == "1366x768")
+		{
+			OS.WindowSize = new Vector2(1366, 768);
+
+		}
+		else if (prueba == "1280x720")
+		{
+			OS.WindowSize = new Vector2(1280, 720);
+
+		}
 
 
 	}
