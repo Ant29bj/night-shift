@@ -7,9 +7,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.224779, 0, 0 )
 operation = 2
 width = 2.20899
 height = 2.70091
-depth = 1.16228
+depth = 1.28336
 
 [node name="CSGCylinder" type="CSGCylinder" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -3.57628e-05, 0.00571442, -0.000185966 )
 radius = 1.25
+height = 1.27326
 sides = 50

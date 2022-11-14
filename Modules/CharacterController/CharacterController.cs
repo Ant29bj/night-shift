@@ -11,8 +11,8 @@ public class CharacterController : KinematicBody
 	[Export] public float stoppingAcceleration = 10.0f;
 	[Export] public float mouseSensivity = 0.003f;
 
-	[Export] public float jumpHeight = 1.0f;
-	[Export] public float jumpMaxDistance = 2.0f;
+	[Export] public float jumpHeight = 4.0f;
+	[Export] public float jumpMaxDistance = 8.0f;
 
 	//Miembros Internos
 	private Vector3 velocity = Vector3.Zero;
@@ -26,26 +26,29 @@ public class CharacterController : KinematicBody
 	private Camera camera = null;
 	private Spatial cameraY = null;
 	public Spatial spotlight = null;
-	public AudioStreamPlayer3D walk = null;
-	public AudioStreamPlayer3D phone = null;
+	public Spatial viewpoint = null;
 
-	public AnimationPlayer aFlash = null;
+	// public AudioStreamPlayer3D walk = null;
+	// public AudioStreamPlayer3D phone = null;
+
+	public AnimationPlayer characterAnim = null;
 
 
 
 
 	public override void _Ready()
 	{
-
 		//Invocado cuando el nodo es agregado y los hijos estan inicializados
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 		camera = GetNode<Camera>("CameraRig/Yrotation/Camera");
 		cameraY = GetNode<Spatial>("CameraRig/Yrotation");
 		spotlight = GetNode<Spatial>("CameraRig/Yrotation/Camera/Celular/Cel/SpotLight");
-		walk = GetNode<AudioStreamPlayer3D>("AudioStreamPlayer3D");
-		phone = GetNode<AudioStreamPlayer3D>("CameraRig/Yrotation/Camera/Celular/Cel/AudioStreamPlayer3D");
-		aFlash = GetNode<AnimationPlayer>("AnimationPlayer");
+		// walk = GetNode<AudioStreamPlayer3D>("AudioStreamPlayer3D");
+		// phone = GetNode<AudioStreamPlayer3D>("CameraRig/Yrotation/Camera/Celular/Cel/AudioStreamPlayer3D");
+		characterAnim = GetNode<AnimationPlayer>("AnimationPlayer");
+		viewpoint = GetNode<Spatial>("Armature");
 
+		characterAnim.Play("Idle-loop"); 
 
 		jumpHeight = jumpHeight / 2.0f;
 		gravity = (-2.0f * jumpHeight * Mathf.Pow(SprintSpeed, 2.0f)) / Mathf.Pow(jumpMaxDistance, 2.0f);
@@ -54,13 +57,14 @@ public class CharacterController : KinematicBody
 
 	public override void _Process(float delta)
 	{
+		// GD.Print("Velocity Y ",velocity.y);
+		// GD.Print("Velocity ",velocity);
 
+		
 		//Invocado cada frame, obtiene el input y maneja la velocidad
 
 		//Obtiene el input principal
 		var input = Input.GetVector("walk_left", "walk_right", "walk_up", "walk_down");
-
-
 		//Inicializacion de variables de ayuda
 		var target_velocity = new Vector3();
 		var utrans = new UTransform(camera.GlobalTransform);
@@ -68,10 +72,23 @@ public class CharacterController : KinematicBody
 		if (Input.IsActionPressed("sprint"))
 		{
 			CurrentSpeed = SprintSpeed;
+			characterAnim.Play("Running-loop");
 		}
+		if(input.x == 0 && input.y == 0 )
+		{
+			characterAnim.Play("Idle-loop");
+
+		}
+		if(Input.IsActionJustPressed("walk_left") || Input.IsActionJustPressed("walk_right") || Input.IsActionJustPressed("walk_up") || Input.IsActionJustPressed("walk_down"))
+		{
+			characterAnim.Play("walking-loop");
+		}
+		
 
 		//se aplican cambios a la velocidad deseada para la direccion relativa
 		target_velocity += utrans.Right * input.x;
+		
+		
 		target_velocity += utrans.Forward * input.y;
 		target_velocity.y = 0.0f;
 		target_velocity = target_velocity.Normalized() * CurrentSpeed;
@@ -90,6 +107,7 @@ public class CharacterController : KinematicBody
 		if (!IsOnFloor())
 		{
 			velocity.y += gravity * delta;
+
 		}
 		else
 		{
@@ -100,26 +118,26 @@ public class CharacterController : KinematicBody
 		{
 			velocity.y = jumpInitialVelocity;
 		}
+		if(Input.IsActionJustPressed("jump"))
+		{
+			characterAnim.Play("Jumping");
+		}
 		if (Input.IsActionJustReleased("jump") && !IsOnFloor() && velocity.y >= 0.0)
 		{
 			velocity.y = 0.0f;
+			
 		}
 		if (Input.IsActionJustPressed("flashlight") && spotlight.Visible)
 		{
 			spotlight.Visible = false;
-			aFlash.Play("flash");
 
 		}
 		else if (Input.IsActionJustPressed("flashlight") && !spotlight.Visible)
 		{
 			spotlight.Visible = true;
-			aFlash.Play("flash");
 
 		}
-		if (Input.IsActionJustReleased("flashlight"))
-		{
-			aFlash.Stop();
-		}
+		
 
 	}
 	public override void _Input(InputEvent e)
@@ -134,6 +152,8 @@ public class CharacterController : KinematicBody
 			// se rota el nodo de camara basado en el vector escalado
 			cameraY.RotateY(motion.x);
 			camera.RotateX(motion.y);
+			viewpoint.RotateY(motion.x);
+
 
 			var camRot = camera.RotationDegrees;
 			camRot.x = Mathf.Clamp(camRot.x, -70.0f, 70.0f);
