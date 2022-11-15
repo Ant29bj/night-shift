@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "whoS0Ef/NACG9A6RnrsOER4j1pZKdGwOzckZ4BN7GHRQTbD12u87pfvPyGJ4JUPvOn+AeLVbrSkm2N6EXKbEmg==",
+  "dgSpecHash": "Rm66PjH1umCiE6KjdEK/03tdIo4DatVAVdfTVe2O+v9AkA+kUKsqrhx5F+VjsupNY5c7OTVdJKqx23STp8ih/A==",
   "success": true,
-  "projectFilePath": "/home/saulrecio/Documentos/ProyectosEscuela/night-shift/Juego Terror Uas.csproj",
+  "projectFilePath": "C:\\Users\\SaulOmen\\Documents\\Juegos\\night-shift\\Juego Terror Uas.csproj",
   "expectedPackageFiles": [
-    "/home/saulrecio/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.2/microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
-    "/home/saulrecio/.nuget/packages/microsoft.netframework.referenceassemblies.net472/1.0.2/microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512"
+    "C:\\Users\\SaulOmen\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.2\\microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+    "C:\\Users\\SaulOmen\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.2\\microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512"
   ],
   "logs": []
 }

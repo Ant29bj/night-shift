@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/saulrecio/Documentos/ProyectosEscuela/night-shift/Juego Terror Uas.csproj": {}
+    "C:\\Users\\SaulOmen\\Documents\\Juegos\\night-shift\\Juego Terror Uas.csproj": {}
   },
   "projects": {
-    "/home/saulrecio/Documentos/ProyectosEscuela/night-shift/Juego Terror Uas.csproj": {
+    "C:\\Users\\SaulOmen\\Documents\\Juegos\\night-shift\\Juego Terror Uas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/saulrecio/Documentos/ProyectosEscuela/night-shift/Juego Terror Uas.csproj",
+        "projectUniqueName": "C:\\Users\\SaulOmen\\Documents\\Juegos\\night-shift\\Juego Terror Uas.csproj",
         "projectName": "Juego Terror Uas",
-        "projectPath": "/home/saulrecio/Documentos/ProyectosEscuela/night-shift/Juego Terror Uas.csproj",
-        "packagesPath": "/home/saulrecio/.nuget/packages/",
-        "outputPath": "/home/saulrecio/Documentos/ProyectosEscuela/night-shift/.mono/temp/obj/",
+        "projectPath": "C:\\Users\\SaulOmen\\Documents\\Juegos\\night-shift\\Juego Terror Uas.csproj",
+        "packagesPath": "C:\\Users\\SaulOmen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SaulOmen\\Documents\\Juegos\\night-shift\\.mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/saulrecio/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\SaulOmen\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net472"
@@ -45,7 +45,7 @@
               "autoReferenced": true
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/dotnet6-6.0.110/sdk/6.0.110/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -58,7 +58,6 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.60887
 fov = 120.0
 
 [node name="Menu" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
@@ -120,6 +119,7 @@ flat = true
 align = 0
 
 [node name="MenuSettings" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
@@ -191,10 +191,8 @@ text = "Return"
 flat = true
 align = 0
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 4 )
-volume_db = 24.0
-pitch_scale = 0.72
 autoplay = true
 
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/StartBtn" to="." method="_on_StartBtn_pressed"]
