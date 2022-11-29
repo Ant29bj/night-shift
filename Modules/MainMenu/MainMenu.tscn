@@ -40,7 +40,7 @@ script = ExtResource( 5 )
 [node name="CSGMesh" parent="Background/Level" index="0"]
 material = SubResource( 3 )
 
-[node name="CharacterController" parent="Background/Level" index="3"]
+[node name="CharacterController" parent="Background/Level" index="1"]
 visible = false
 
 [node name="ViewportContainer" type="ViewportContainer" parent="Background"]

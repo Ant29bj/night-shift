@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Modules/Salon/Salon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Modules/CharacterController/CharacterController.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Resources/Grass/Grass001_1K_Color.jpg" type="Texture" id=3]
+[ext_resource path="res://Modules/Escaleras/Escaleras.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Modules/PasillosdoPiso/PasillosdoPiso.tscn" type="PackedScene" id=5]
 
 [sub_resource type="QuadMesh" id=1]
 size = Vector2( 200, 200 )
@@ -11,15 +13,11 @@ size = Vector2( 200, 200 )
 albedo_texture = ExtResource( 3 )
 uv1_scale = Vector3( 6, 6, 6 )
 
-[sub_resource type="PanoramaSky" id=3]
-
-[sub_resource type="Environment" id=4]
-background_mode = 2
-background_sky = SubResource( 3 )
-ambient_light_energy = 0.0
+[sub_resource type="Environment" id=3]
 fog_enabled = true
-fog_depth_begin = 50.0
-fog_depth_end = 2774.5
+fog_color = Color( 0.721569, 0.752941, 0.784314, 1 )
+fog_depth_end = 4000.0
+fog_depth_curve = 0.297302
 
 [node name="Spatial" type="Spatial"]
 
@@ -29,19 +27,123 @@ use_collision = true
 mesh = SubResource( 1 )
 material = SubResource( 2 )
 
-[node name="Salon" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.018, -0.364, 12.776 )
-
-[node name="Salon2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.998, -0.364, 12.776 )
-
 [node name="CharacterController" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, 0, 0.259169, -10.6151 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 4 )
+environment = SubResource( 3 )
 
-[node name="SpotLight" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 8.92651, 8.36377, -0.202244 )
+[node name="EdificioOne" type="Spatial" parent="."]
+
+[node name="Salon" parent="EdificioOne" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1667, -0.364, 12.776 )
+
+[node name="Salon2" parent="EdificioOne" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.89011, -0.364, 12.776 )
+
+[node name="Salon5" parent="EdificioOne" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.89, 6.62343, 12.776 )
+
+[node name="Salon7" parent="EdificioOne" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.2808, 6.62343, 12.776 )
+
+[node name="Salon8" parent="EdificioOne" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -66.4535, 6.62343, 12.776 )
+
+[node name="Salon6" parent="EdificioOne" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1616, 6.62343, 12.776 )
+
+[node name="Salon3" parent="EdificioOne" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.4341, -0.364, 12.776 )
+
+[node name="Salon4" parent="EdificioOne" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -66.5623, -0.364, 12.776 )
+
+[node name="PasillodoPiso" parent="EdificioOne" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5589, 6.934, -1.758 )
+
+[node name="Escalera" parent="EdificioOne" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9944, 0.399042, 8.82254 )
+
+[node name="SpotLight" type="SpotLight" parent="EdificioOne"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 21.9861, 7.12829, -0.202244 )
+spot_range = 13.9317
+spot_angle = 50.5386
+
+[node name="SpotLight2" type="SpotLight" parent="EdificioOne"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.02711, 7.17797, -0.202244 )
+spot_range = 13.9317
+spot_angle = 50.5386
+
+[node name="SpotLight3" type="SpotLight" parent="EdificioOne"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -37.4566, 7.14299, -0.202244 )
+spot_range = 13.9317
+spot_angle = 50.5386
+
+[node name="SpotLight5" type="SpotLight" parent="EdificioOne"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -32.8405, 6.9402, 13.798 )
+spot_range = 13.9317
+spot_angle = 50.5386
+
+[node name="SpotLight4" type="SpotLight" parent="EdificioOne"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -59.5562, 7.14234, -0.202244 )
+spot_range = 13.9317
+spot_angle = 50.5386
+
+[node name="EdificioTwo" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.208145, -3.8147e-06, 58.1593 )
+
+[node name="Salon" parent="EdificioTwo" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1667, -0.364, 12.776 )
+
+[node name="Salon2" parent="EdificioTwo" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.89011, -0.364, 12.776 )
+
+[node name="Salon5" parent="EdificioTwo" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.89, 6.62343, 12.776 )
+
+[node name="Salon7" parent="EdificioTwo" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.2808, 6.62343, 12.776 )
+
+[node name="Salon8" parent="EdificioTwo" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -66.4535, 6.62343, 12.776 )
+
+[node name="Salon6" parent="EdificioTwo" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1616, 6.62343, 12.776 )
+
+[node name="Salon3" parent="EdificioTwo" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.4341, -0.364, 12.776 )
+
+[node name="Salon4" parent="EdificioTwo" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -66.5623, -0.364, 12.776 )
+
+[node name="PasillodoPiso" parent="EdificioTwo" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5589, 6.934, -1.758 )
+
+[node name="Escalera" parent="EdificioTwo" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9944, 0.399042, 8.82254 )
+
+[node name="SpotLight" type="SpotLight" parent="EdificioTwo"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 21.9861, 7.12829, -0.202244 )
+spot_range = 13.9317
+spot_angle = 50.5386
+
+[node name="SpotLight2" type="SpotLight" parent="EdificioTwo"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.02711, 7.17797, -0.202244 )
+spot_range = 13.9317
+spot_angle = 50.5386
+
+[node name="SpotLight3" type="SpotLight" parent="EdificioTwo"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -37.4566, 7.14299, -0.202244 )
+spot_range = 13.9317
+spot_angle = 50.5386
+
+[node name="SpotLight5" type="SpotLight" parent="EdificioTwo"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -32.8405, 6.9402, 13.798 )
+spot_range = 13.9317
+spot_angle = 50.5386
+
+[node name="SpotLight4" type="SpotLight" parent="EdificioTwo"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -59.5562, 7.14234, -0.202244 )
 spot_range = 13.9317
 spot_angle = 50.5386

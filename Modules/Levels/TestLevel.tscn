@@ -6,7 +6,7 @@
 [node name="TestLevel" type="Spatial"]
 
 [node name="KinematicBody" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.199999, 4.8, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.199999, 12.519, 0 )
 
 [node name="CSGBox" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.14687, 0 )
@@ -34,13 +34,13 @@ height = 4.6
 depth = 55.6
 
 [node name="Stairs" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.2713, 0 )
 
 [node name="CSGBox" type="CSGBox" parent="Stairs"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.550888, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.524796, 0 )
 calculate_tangents = false
 use_collision = true
-height = 0.5
+height = 0.44322
 
 [node name="CSGBox2" type="CSGBox" parent="Stairs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.804346, 0 )
