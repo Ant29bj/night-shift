@@ -74,6 +74,13 @@ use_collision = true
 height = 0.443
 depth = 4.5
 
+[node name="CSGBox9" type="CSGBox" parent="EscaleraBaja"]
+transform = Transform( 1, 0, 0, 0, 0.892562, 0.450924, 0, -0.450924, 0.892562, 0, 0.844197, 0.784934 )
+visible = false
+width = 4.56831
+height = 0.362506
+depth = 10.1628
+
 [node name="EscaleraAlta" type="Spatial" parent="."]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.0739, 3.06626, 6.52936 )
 
@@ -124,3 +131,10 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 3.06
 use_collision = true
 height = 0.443
 depth = 4.5
+
+[node name="CSGBox10" type="CSGBox" parent="EscaleraAlta"]
+transform = Transform( -1, 3.94211e-08, 7.80303e-08, 0, 0.892562, -0.450924, -8.74228e-08, -0.450924, -0.892562, -0.057214, 1.25797, 1.63909 )
+visible = false
+width = 4.56831
+height = 0.362506
+depth = 10.1628

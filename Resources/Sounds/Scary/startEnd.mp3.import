@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/startEnd.mp3-d7dd255c2c0537491b94f78353cb8bca.mp3str"
+
+[deps]
+
+source_file="res://Resources/Sounds/Scary/startEnd.mp3"
+dest_files=[ "res://.import/startEnd.mp3-d7dd255c2c0537491b94f78353cb8bca.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

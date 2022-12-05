@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/finalSound.mp3-9d2a172c780f19e8e007f1ef4e4ed7db.mp3str"
+
+[deps]
+
+source_file="res://Modules/Win/finalSound.mp3"
+dest_files=[ "res://.import/finalSound.mp3-9d2a172c780f19e8e007f1ef4e4ed7db.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

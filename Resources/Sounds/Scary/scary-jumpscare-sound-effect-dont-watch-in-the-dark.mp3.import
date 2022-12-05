@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/scary-jumpscare-sound-effect-dont-watch-in-the-dark.mp3-46baec638774b2dde35c382aef3fd351.mp3str"
+
+[deps]
+
+source_file="res://Resources/Sounds/Scary/scary-jumpscare-sound-effect-dont-watch-in-the-dark.mp3"
+dest_files=[ "res://.import/scary-jumpscare-sound-effect-dont-watch-in-the-dark.mp3-46baec638774b2dde35c382aef3fd351.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

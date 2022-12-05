@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/warning-extremely-loud-scary-screamer.mp3-5f727da5d4d278521a21c3f41a30de1c.mp3str"
+
+[deps]
+
+source_file="res://Resources/Sounds/Scary/warning-extremely-loud-scary-screamer.mp3"
+dest_files=[ "res://.import/warning-extremely-loud-scary-screamer.mp3-5f727da5d4d278521a21c3f41a30de1c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

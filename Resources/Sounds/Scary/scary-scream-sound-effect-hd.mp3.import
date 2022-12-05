@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/scary-scream-sound-effect-hd.mp3-6e99acffc1503f5af8f8090652512f86.mp3str"
+
+[deps]
+
+source_file="res://Resources/Sounds/Scary/scary-scream-sound-effect-hd.mp3"
+dest_files=[ "res://.import/scary-scream-sound-effect-hd.mp3-6e99acffc1503f5af8f8090652512f86.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

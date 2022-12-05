@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/rain-noise-rain-sound-effect-no-copyright-nature-sounds720p-hd-liked-like-share.mp3-1d779612275092a65af62657ca39b376.mp3str"
+
+[deps]
+
+source_file="res://Resources/Sounds/Rain/rain-noise-rain-sound-effect-no-copyright-nature-sounds720p-hd-liked-like-share.mp3"
+dest_files=[ "res://.import/rain-noise-rain-sound-effect-no-copyright-nature-sounds720p-hd-liked-like-share.mp3-1d779612275092a65af62657ca39b376.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

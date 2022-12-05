@@ -32,6 +32,9 @@ public class CharacterController : KinematicBody
 	// public AudioStreamPlayer3D phone = null;
 
 	public AnimationPlayer characterAnim = null;
+//	public AnimationPlayer MenuAnimation = null;
+
+	public ColorRect PauseM = null;
 
 
 
@@ -47,8 +50,9 @@ public class CharacterController : KinematicBody
 		// phone = GetNode<AudioStreamPlayer3D>("CameraRig/Yrotation/Camera/Celular/Cel/AudioStreamPlayer3D");
 		characterAnim = GetNode<AnimationPlayer>("AnimationPlayer");
 		viewpoint = GetNode<Spatial>("Armature");
+//		PauseM = GetNode<ColorRect>("PauseMenu");
 
-		characterAnim.Play("Idle-loop"); 
+		characterAnim.Play("Idle-loop");
 
 		jumpHeight = jumpHeight / 2.0f;
 		gravity = (-2.0f * jumpHeight * Mathf.Pow(SprintSpeed, 2.0f)) / Mathf.Pow(jumpMaxDistance, 2.0f);
@@ -60,7 +64,7 @@ public class CharacterController : KinematicBody
 		// GD.Print("Velocity Y ",velocity.y);
 		// GD.Print("Velocity ",velocity);
 
-		
+
 		//Invocado cada frame, obtiene el input y maneja la velocidad
 
 		//Obtiene el input principal
@@ -68,27 +72,31 @@ public class CharacterController : KinematicBody
 		//Inicializacion de variables de ayuda
 		var target_velocity = new Vector3();
 		var utrans = new UTransform(camera.GlobalTransform);
+
+
+
+
 		var CurrentSpeed = speed;
 		if (Input.IsActionPressed("sprint"))
 		{
 			CurrentSpeed = SprintSpeed;
 			characterAnim.Play("Running-loop");
 		}
-		if(input.x == 0 && input.y == 0 )
+		if (input.x == 0 && input.y == 0)
 		{
 			characterAnim.Play("Idle-loop");
 
 		}
-		if(Input.IsActionJustPressed("walk_left") || Input.IsActionJustPressed("walk_right") || Input.IsActionJustPressed("walk_up") || Input.IsActionJustPressed("walk_down"))
+		if (Input.IsActionJustPressed("walk_left") || Input.IsActionJustPressed("walk_right") || Input.IsActionJustPressed("walk_up") || Input.IsActionJustPressed("walk_down"))
 		{
 			characterAnim.Play("walking-loop");
 		}
-		
+
 
 		//se aplican cambios a la velocidad deseada para la direccion relativa
 		target_velocity += utrans.Right * input.x;
-		
-		
+
+
 		target_velocity += utrans.Forward * input.y;
 		target_velocity.y = 0.0f;
 		target_velocity = target_velocity.Normalized() * CurrentSpeed;
@@ -118,14 +126,14 @@ public class CharacterController : KinematicBody
 		{
 			velocity.y = jumpInitialVelocity;
 		}
-		if(Input.IsActionJustPressed("jump"))
+		if (Input.IsActionJustPressed("jump"))
 		{
 			characterAnim.Play("Jumping");
 		}
 		if (Input.IsActionJustReleased("jump") && !IsOnFloor() && velocity.y >= 0.0)
 		{
 			velocity.y = 0.0f;
-			
+
 		}
 		if (Input.IsActionJustPressed("flashlight") && spotlight.Visible)
 		{
@@ -137,7 +145,13 @@ public class CharacterController : KinematicBody
 			spotlight.Visible = true;
 
 		}
-		
+//		if (Input.IsActionPressed("ui_cancel"))
+//		{
+//
+//			PauseM.Call("pause");
+//		}
+
+
 
 	}
 	public override void _Input(InputEvent e)
@@ -151,7 +165,7 @@ public class CharacterController : KinematicBody
 
 			// se rota el nodo de camara basado en el vector escalado
 			cameraY.RotateY(motion.x);
-			camera.RotateX(motion.y);
+			camera.RotateX(motion.y * -1);
 			viewpoint.RotateY(motion.x);
 
 
@@ -159,14 +173,16 @@ public class CharacterController : KinematicBody
 			camRot.x = Mathf.Clamp(camRot.x, -70.0f, 70.0f);
 			camera.RotationDegrees = camRot;
 
-			if (e.IsActionPressed("ui_cancel"))
-			{//checa si llamamos el ui_cancel input
+			// if (e.IsActionPressed("ui_cancel"))
+			// {//checa si llamamos el ui_cancel input
 
-				//usa un operador terciario para asignar el modo del mouse
-				Input.MouseMode = (Input.MouseMode == Input.MouseModeEnum.Captured ? Input.MouseModeEnum.Visible : Input.MouseModeEnum.Captured);
-			}
+			// 	//usa un operador terciario para asignar el modo del mouse
+			// 	Input.MouseMode = (Input.MouseMode == Input.MouseModeEnum.Captured ? Input.MouseModeEnum.Visible : Input.MouseModeEnum.Captured);
+			// }
 		}
 	}
+
+
 
 
 	public bool jumpTest()

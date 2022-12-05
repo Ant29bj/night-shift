@@ -19,6 +19,9 @@ public class MainMenu : Node
 		Settings = GetNode<Control>("MenuSettings");
 		MenuBtns = GetNode<MenuButton>("MenuSettings/MarginContainer/VBoxContainer/ResolutionBtn");
 		MenuBtns.GetPopup().Connect("id_pressed", this, "_on_item_pressed");
+		// GD.Print("Iniciando Juego");
+		// GD.Print("Windows Size: " + OS.WindowSize);
+		// GD.Print("Screen display: " + OS.GetScreenSize());
 
 
 
@@ -50,38 +53,57 @@ public class MainMenu : Node
 	private void _on_FullscreenBtn_pressed()
 	{
 		OS.WindowFullscreen = !OS.WindowFullscreen;
-		// Menu.Size();
 	}
 
 	private void _on_item_pressed(int id)
 	{
 		string prueba = MenuBtns.GetPopup().GetItemText(id);
+		GD.Print("Cambiando Screen display");
+
 		if (prueba == "1920x1080")
 		{
 			OS.WindowSize = new Vector2(1920, 1080);
+			GD.Print("Windows Size: " + OS.WindowSize);
+			GD.Print("Screen display: " + OS.GetScreenSize());
+
 
 		}
 		else if (prueba == "1600x900")
 		{
 			OS.WindowSize = new Vector2(1600, 900);
+			GD.Print("Windows Size: " + OS.WindowSize);
+			GD.Print("Screen display: " + OS.GetScreenSize());
 
 		}
 		else if (prueba == "1366x768")
 		{
 			OS.WindowSize = new Vector2(1366, 768);
+			GD.Print("Windows Size: " + OS.WindowSize);
+			GD.Print("Screen display: " + OS.GetScreenSize());
 
 		}
 		else if (prueba == "1280x720")
 		{
 			OS.WindowSize = new Vector2(1280, 720);
+			GD.Print("Windows Size: " + OS.WindowSize);
+			GD.Print("Screen display: " + OS.GetScreenSize());
+
 
 		}
 
 
 	}
+	private void _on_HSlider_value_changed(float value)
+	{
+		AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("Master"), value);
+
+	}
 
 
 }
+
+
+
 
 
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Re2Theme.mp3-342fae3bbc1e13f2a97f7e9c7c41e2c5.mp3str"
+
+[deps]
+
+source_file="res://Modules/Credits/Re2Theme.mp3"
+dest_files=[ "res://.import/Re2Theme.mp3-342fae3bbc1e13f2a97f7e9c7c41e2c5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

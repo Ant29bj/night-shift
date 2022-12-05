@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/screamSound.mp3-1a8a1d2fed628a3b4bcdca6a2742c0c4.mp3str"
+
+[deps]
+
+source_file="res://Resources/Sounds/Scary/screamSound.mp3"
+dest_files=[ "res://.import/screamSound.mp3-1a8a1d2fed628a3b4bcdca6a2742c0c4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
